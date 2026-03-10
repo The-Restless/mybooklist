@@ -1,0 +1,234 @@
+.review-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.review-dialog {
+  background: #161c22;
+  border: 1px solid #2a3540;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  animation: reviewIn 0.2s ease;
+}
+
+@keyframes reviewIn {
+  from { opacity: 0; transform: scale(0.95) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.review-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #2a3540;
+}
+
+.review-title {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #eaf0f4;
+}
+
+.review-book-name {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #889297;
+}
+
+.review-close {
+  background: #222b35;
+  border: 1px solid #2a3540;
+  color: #889297;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.2s, background 0.2s;
+}
+
+.review-close:hover {
+  color: #ffffff;
+  background: #2e3a46;
+}
+
+.review-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 24px;
+}
+
+/* Shared field styles (same as AddBookModal) */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #dbe2e6;
+}
+
+.required {
+  color: #ff6b6b;
+  margin-left: 2px;
+}
+
+.optional {
+  color: #55606e;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.field-input {
+  background: #1e2830;
+  border: 1px solid #2a3540;
+  border-radius: 8px;
+  color: #dbe2e6;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.field-input:focus {
+  border-color: #1a9fff;
+}
+
+.field-input.field-error {
+  border-color: #ff6b6b;
+}
+
+.field-input::placeholder {
+  color: #3e4c59;
+}
+
+.field-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.field-hint {
+  font-size: 0.78rem;
+  color: #55606e;
+}
+
+.error-msg {
+  font-size: 0.78rem;
+  color: #ff6b6b;
+}
+
+.char-count {
+  font-size: 0.75rem;
+  color: #55606e;
+  text-align: right;
+}
+
+/* Rating row */
+.rating-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rating-input {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+/* Hide browser number input arrows */
+.rating-input::-webkit-outer-spin-button,
+.rating-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.rating-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.rating-out-of {
+  font-size: 0.95rem;
+  color: #889297;
+}
+
+/* Star preview */
+.star-preview {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.preview-star {
+  font-size: 1.1rem;
+  color: #3e4c59;
+}
+
+.preview-star.filled {
+  color: #f0c674;
+}
+
+.preview-num {
+  font-size: 0.85rem;
+  color: #889297;
+  margin-left: 4px;
+}
+
+/* Footer */
+.review-footer {
+  display: flex;
+  gap: 10px;
+  padding: 16px 24px 20px;
+  border-top: 1px solid #2a3540;
+}
+
+.review-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.review-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.review-btn-cancel {
+  background: #222b35;
+  color: #889297;
+  border: 1px solid #2a3540;
+}
+
+.review-btn-save {
+  background: #f0c674;
+  color: #101214;
+}
