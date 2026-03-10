@@ -1,0 +1,131 @@
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.dialog {
+  display: flex;
+  background: #161c22;
+  border: 1px solid #2a3540;
+  border-radius: 14px;
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  animation: dialogIn 0.2s ease;
+}
+
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.dialog-cover-wrap {
+  flex-shrink: 0;
+  width: 160px;
+}
+
+.dialog-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.dialog-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  flex: 1;
+}
+
+.dialog-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #eaf0f4;
+  line-height: 1.3;
+}
+
+.dialog-author {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #889297;
+}
+
+.dialog-genre {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #1a9fff;
+  background: rgba(26, 159, 255, 0.12);
+  padding: 2px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.dialog-synopsis {
+  margin: 4px 0 0;
+  font-size: 0.83rem;
+  color: #7a8a95;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.dialog-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.dialog-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.dialog-btn-cancel {
+  background: #222b35;
+  color: #889297;
+  border: 1px solid #2a3540;
+}
+
+.dialog-btn-confirm {
+  background: #1a9fff;
+  color: #ffffff;
+}
+
+@media (max-width: 580px) {
+  .dialog {
+    flex-direction: column;
+  }
+
+  .dialog-cover-wrap {
+    width: 100%;
+    height: 180px;
+  }
+}
